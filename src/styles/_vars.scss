@@ -1,0 +1,36 @@
+$themeColor: #000000;
+
+$font: "Calibri", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$titleFont: $font;
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+$tablet: $sm;
+$desktop: $xl;
+
+@mixin font(
+  $mobileFontSize,
+  $tabletFontSize,
+  $desktopFontSize,
+  $mobileLineHeight: normal,
+  $tabletLineHeight: normal,
+  $desktopLineHeight: normal
+) {
+  font-size: $mobileFontSize;
+  line-height: $mobileLineHeight;
+  @media (min-width: $tablet) {
+    font-size: $tabletFontSize;
+    line-height: $tabletLineHeight;
+  }
+  @media (min-width: $desktop) {
+    font-size: $desktopFontSize;
+    line-height: $desktopLineHeight;
+  }
+}

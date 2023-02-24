@@ -1,0 +1,37 @@
+@import "../vars";
+
+// Your variable overrides
+$primary: $themeColor;
+$secondary: $themeColor;
+
+$border-radius: 0px;
+$border-radius-lg: $border-radius;
+$border-radius-sm: $border-radius;
+
+$font-family-sans-serif: $font;
+
+$btn-border-radius: $border-radius;
+$btn-border-radius-lg: $border-radius;
+$btn-border-radius-sm: $border-radius;
+$btn-font-family: $font;
+$btn-white-space: nowrap !default; // Set to `nowrap` to prevent text wrapping
+
+$btn-padding-y: 8px;
+$btn-padding-x: 16px;
+$btn-padding-y-sm: 8px;
+$btn-padding-x-sm: 16px;
+
+$input-focus-box-shadow: none !important;
+$input-btn-focus-box-shadow: none !important;
+$btn-focus-box-shadow: none !important;
+
+$btn-padding-y-lg: 24px;
+$btn-padding-x-lg: 32px;
+
+// ========== NAV LINKS ===============
+$nav-link-color: black;
+$nav-link-font-size: 15px;
+
+$headings-color: #415968;
+
+$input-padding-y: $btn-padding-y;
