@@ -1,17 +1,23 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
-import Layout from "../../components/Layout";
-import { PrismicRichText } from "@prismicio/react";
+import { PrismicRichText, SliceZone } from "@prismicio/react";
 import Metadata from "../../components/Metadata";
+import HeroSection from "./components/HeroSection";
 
 const HomePageTemplate = ({ data }) => {
   const pageData = data?.prismicHomePage.dataRaw;
 
   return (
-    <Layout data={pageData}>
+    <>
       <PrismicRichText field={pageData?.title} />
-    </Layout>
+      <SliceZone
+        slices={pageData?.dataRaw?.body}
+        components={{
+          hero_section: HeroSection,
+        }}
+      />
+    </>
   );
 };
 

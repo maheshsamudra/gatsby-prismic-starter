@@ -1,7 +1,7 @@
 import React from "react";
 import { PrismicPreviewProvider } from "gatsby-plugin-prismic-previews";
 import HomePageTemplate from "./src/templates/HomePage";
-import CommonPageTemplate from "./src/templates/Page";
+import CommonPageTemplate from "./src/templates/Page_old";
 
 import "./src/styles/bootstrap/index.scss";
 

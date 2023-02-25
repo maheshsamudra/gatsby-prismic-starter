@@ -1,25 +1,27 @@
 import React from "react";
 import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 import { graphql } from "gatsby";
-import { SliceZone } from "@prismicio/react";
+import { PrismicRichText, SliceZone } from "@prismicio/react";
 import Metadata from "../../components/Metadata";
 import HeroSection from "./components/HeroSection";
 
-const components = {
-  hero_section: HeroSection,
-};
-
-const Page = ({ data }) => {
+const CommonPageTemplate = ({ data }) => {
   const pageData = data?.prismicPage?.dataRaw;
 
   return (
     <>
-      <SliceZone slices={pageData?.dataRaw?.body} components={components} />
+      <PrismicRichText field={pageData?.title} />
+      <SliceZone
+        slices={pageData?.dataRaw?.body}
+        components={{
+          hero_section: HeroSection,
+        }}
+      />
     </>
   );
 };
 
-export default withPrismicPreview(Page);
+export default withPrismicPreview(CommonPageTemplate);
 
 export const Head = ({ data }) => {
   return <Metadata pageData={data?.prismicPage?.dataRaw} />;
