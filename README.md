@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby Starter for Prismic + Previews
+  Gatsby Starter with Prismic + Previews
 </h1>
 
 ## 🚀 Quick start
@@ -75,3 +75,15 @@
 Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
 
 [<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+
+
+### Included packages:
+
+- [@prismicio/react](https://www.npmjs.com/package/@prismicio/react)
+- [axios](https://www.npmjs.com/package/axios)
+- [bootstrap](https://www.npmjs.com/package/bootstrap)
+- [mailgun.js](https://www.npmjs.com/package/mailgun.js)
+- [react-bootstrap](https://www.npmjs.com/package/react-bootstrap)
+- [sass](https://www.npmjs.com/package/sass)
+
+*Please see package.json for others*
