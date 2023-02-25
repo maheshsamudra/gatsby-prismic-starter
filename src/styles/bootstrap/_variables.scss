@@ -1,10 +1,40 @@
 @import "../vars";
 
-// Your variable overrides
-$primary: $themeColor;
-$secondary: $themeColor;
+$font-size-base: 1rem; // This should be in rem
 
-$border-radius: 0px;
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+//$primary: $themeColor;
+//$secondary: $themeColor;
+
+$primary: $themeColor;
+$secondary: #1abc9c;
+$success: #27ae60;
+$info: #95a5a6;
+$warning: #e67e22;
+$danger: #e74c3c;
+$light: #ecf0f1;
+$dark: #2c3e50;
+
+$min-contrast-ratio: 3; // Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+
+//$blue: #2980b9;
+//$indigo: #9b59b6;
+//$purple: #8e44ad;
+//$pink: #d63384;
+//$red: #e74c3c;
+//$orange: #e67e22;
+//$yellow: #f1c40f;
+//$green: #2ecc71;
+//$teal: #20c997;
+//$cyan: #0dcaf0;
+
+$border-radius: 4px;
 $border-radius-lg: $border-radius;
 $border-radius-sm: $border-radius;
 
