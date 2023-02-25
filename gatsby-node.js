@@ -4,7 +4,11 @@ const graphQuery = require("./build/buildQuery");
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const queryData = await graphql(graphQuery);
+  const query = await graphQuery();
+
+  console.log(query);
+
+  const queryData = await graphql(query);
 
   const homePages = queryData?.data?.allPrismicHomePage?.nodes || [];
   buildPages(homePages, "src/templates/HomePage/index.jsx", createPage);

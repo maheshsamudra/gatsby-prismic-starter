@@ -1,5 +1,5 @@
 const lodash = require("lodash");
-
+const fs = require("fs");
 const pascalCase = (name = "") => {
   return lodash.upperFirst(lodash.camelCase(name));
 };
@@ -17,6 +17,9 @@ module.exports = function (plop) {
     ],
     actions: (props) => {
       const parsedName = pascalCase(props.name);
+
+      fs.writeFileSync("build/buildQuery.js", getNewQuery(), "utf-8");
+
       return [
         {
           type: "add",
@@ -62,6 +65,10 @@ module.exports = function (plop) {
       const prismicCustomTypeName = lodash.camelCase(
         `prismic ${props.prismicCustomTypeSlug}`
       );
+
+      const prismicQueryName = lodash.camelCase(
+        `all prismic ${props.prismicCustomTypeSlug}`
+      );
       return [
         {
           type: "add",
@@ -79,7 +86,27 @@ module.exports = function (plop) {
           templateFile: "plop-templates/template/component.hbs",
           data: { parsedComponentName },
         },
+        {
+          type: "add",
+          path: `build/buildQuery/queries/${prismicQueryName}.js`,
+          templateFile: "plop-templates/template/graphQuery.hbs",
+          data: { prismicQueryName },
+        },
       ];
     },
   });
+};
+
+const getNewQuery = () => {
+  const existingQuery = require("./build/buildQuery");
+
+  const query = JSON.parse(existingQuery);
+
+  console.log(query.allPrismicPage);
+
+  return `const query = \`
+    ${existingQuery}\`;
+
+module.exports = query;
+`;
 };
