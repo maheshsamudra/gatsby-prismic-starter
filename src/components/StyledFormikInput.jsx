@@ -6,9 +6,11 @@ const StyledFormikInput = ({
   name,
   type = "text",
   placeholder = " ",
+  readOnly = false,
 }) => {
-  const { errors, touched } = useFormikContext();
+  const { errors, touched, status } = useFormikContext();
   const hasError = errors?.[name] && touched?.[name];
+
   return (
     <div className="form-floating mb-3">
       <Field
@@ -17,6 +19,7 @@ const StyledFormikInput = ({
         placeholder={placeholder}
         className={`form-control ${hasError ? "is-invalid" : ""}`}
         id={name}
+        disabled={status?.success || readOnly}
       />
       <label htmlFor={name}>{label}</label>
       <ErrorMessage

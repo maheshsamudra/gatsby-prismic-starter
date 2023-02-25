@@ -5,6 +5,7 @@ import { Field, Formik } from "formik";
 import StyledFormikInput from "../../components/StyledFormikInput";
 import { testSchema } from "../../utils/validationSchemas";
 import StyledButton from "../../components/StyledButton";
+import StyledFormikMessage from "../../components/StyledFormikMessage";
 
 const SampleComponents = () => {
   return (
@@ -53,12 +54,27 @@ const SampleComponents = () => {
               email: "",
             }}
             validationSchema={testSchema}
-            onSubmit={async (values) => {
-              await new Promise((r) => setTimeout(r, 500));
-              alert(JSON.stringify(values, null, 2));
+            onSubmit={async (values, { setStatus }) => {
+              setStatus({});
+              await new Promise((r) => setTimeout(r, 2000));
+
+              const statuses = [
+                {
+                  success: true,
+                  type: "success",
+                  message:
+                    "Successfully sent. One of our agents will get back to you soon.",
+                },
+                {
+                  success: false,
+                  type: "danger",
+                  message: "Failed to send the message. Please retry.",
+                },
+              ];
+              setStatus(statuses[1]); // change this to 0 or 1
             }}
           >
-            {({ handleSubmit, isSubmitting, status, dirty }) => {
+            {({ handleSubmit, isSubmitting, status, dirty, ...others }) => {
               return (
                 <Form onSubmit={handleSubmit}>
                   <StyledFormikInput
@@ -71,7 +87,12 @@ const SampleComponents = () => {
                     type={"text"}
                     label={"Email"}
                   />
-                  <StyledButton title={"Submit"} progress={isSubmitting} />
+                  <StyledButton
+                    title={"Submit"}
+                    progress={isSubmitting}
+                    disabled={status?.success}
+                  />
+                  <StyledFormikMessage status={status} />
                 </Form>
               );
             }}
