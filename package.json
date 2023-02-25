@@ -8,6 +8,7 @@
     "gatsby"
   ],
   "scripts": {
+    "develop": "gatsby develop -o",
     "dev": "gatsby develop -o",
     "clean-dev": "gatsby clean && gatsby develop -o",
     "create": "plop",

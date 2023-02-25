@@ -1,0 +1,35 @@
+{
+  "Main": {
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Title"
+      }
+    }
+  },
+  "Metadata": {
+    "meta_title": {
+      "type": "Text",
+      "config": {
+        "label": "Meta Title"
+      }
+    },
+    "meta_description": {
+      "type": "Text",
+      "config": {
+        "label": "Meta Description"
+      }
+    },
+    "meta_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1600
+        },
+        "thumbnails": [],
+        "label": "Meta Image"
+      }
+    }
+  }
+}
