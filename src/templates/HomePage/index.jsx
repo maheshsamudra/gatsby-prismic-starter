@@ -4,13 +4,19 @@ import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 import { PrismicRichText, SliceZone } from "@prismicio/react";
 import Metadata from "../../components/Metadata";
 import HeroSection from "./components/HeroSection";
+import StyledComponent from "../../components/StyledComponent";
+import SampleComponents from "./SampleComponents";
 
 const HomePageTemplate = ({ data }) => {
   const pageData = data?.prismicHomePage.dataRaw;
 
   return (
     <>
-      <PrismicRichText field={pageData?.title} />
+      <div className="text-center mt-5">
+        <PrismicRichText field={pageData?.title} />
+      </div>
+
+      <SampleComponents />
       <SliceZone
         slices={pageData?.dataRaw?.body}
         components={{

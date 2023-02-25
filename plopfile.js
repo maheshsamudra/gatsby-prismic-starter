@@ -100,10 +100,6 @@ module.exports = function (plop) {
 const getNewQuery = () => {
   const existingQuery = require("./build/buildQuery");
 
-  const query = JSON.parse(existingQuery);
-
-  console.log(query.allPrismicPage);
-
   return `const query = \`
     ${existingQuery}\`;
 
