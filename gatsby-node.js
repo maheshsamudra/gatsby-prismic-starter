@@ -20,10 +20,4 @@ exports.createPages = async ({ graphql, actions }) => {
 
     buildPages(pages, `src/templates/${templateName}/index.jsx`, createPage);
   });
-
-  // const homePages = queryData?.data?.allPrismicHomePage?.nodes || [];
-  // buildPages(homePages, "src/templates/HomePage/index.jsx", createPage);
-  //
-  // const pages = queryData?.data.allPrismicPage?.nodes || [];
-  // buildPages(pages, "src/templates/Page/index.jsx", createPage);
 };

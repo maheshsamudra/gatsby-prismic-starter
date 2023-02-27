@@ -18,8 +18,6 @@ module.exports = function (plop) {
     actions: (props) => {
       const parsedName = pascalCase(props.name);
 
-      fs.writeFileSync("build/buildQuery.js", getNewQuery(), "utf-8");
-
       return [
         {
           type: "add",
@@ -52,11 +50,6 @@ module.exports = function (plop) {
         type: "input",
         name: "prismicCustomTypeSlug",
         message: "Prismic custom type slug:",
-      },
-      {
-        type: "input",
-        name: "templateName",
-        message: "Template name:",
       },
     ],
     actions: (props) => {
@@ -95,14 +88,4 @@ module.exports = function (plop) {
       ];
     },
   });
-};
-
-const getNewQuery = () => {
-  const existingQuery = require("./build/buildQuery");
-
-  return `const query = \`
-    ${existingQuery}\`;
-
-module.exports = query;
-`;
 };
