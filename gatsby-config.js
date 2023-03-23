@@ -42,8 +42,6 @@ module.exports = {
       options: {
         repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
         accessToken: process.env.PRISMIC_ACCESS_TOKEN,
-        // routes: require("./path-to-your-routeResolver").routeResolver,
-        linkResolver: require("./config/prismic/linkResolver").linkResolver,
       },
     },
   ],
